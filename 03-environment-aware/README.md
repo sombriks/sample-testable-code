@@ -7,6 +7,7 @@
 ## Running
 
 ```bash
+# development mode with hot reload enabled
 npm run dev
 ```
 
