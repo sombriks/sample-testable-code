@@ -6,7 +6,7 @@
   "main": "index.mjs",
   "scripts": {
     "start": "node index.mjs",
-    "test": "curl -i http://localhost:3000/books?author=Neil%20Gaiman"
+    "test": "curl -i http://localhost:3000/books?author=Neil%20Gaiman  | grep \"HTTP/1.1 200\""
   },
   "keywords": [],
   "author": "",

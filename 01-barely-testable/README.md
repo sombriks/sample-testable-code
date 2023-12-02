@@ -17,7 +17,7 @@ In another one, perform the request`
 
 ```bash
 # hit it with some predictable requests
-curl -i http://localhost:3000/books?author=Neil%20Gaiman
+curl -i http://localhost:3000/books?author=Neil%20Gaiman | grep "HTTP/1.1 200"
 ```
 
 Make sure the database is available as described in parent [README.md](../README.md)
