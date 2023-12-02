@@ -1,7 +1,8 @@
 # 03: Environment aware
 
-- Use distinct context for test environment
-- Allow a development mode
+- Use distinct contexts for production, development and test environment
+- Make use of environment variables
+- Test suite now is completely independent of external resources (no database)
 
 ## Running
 
