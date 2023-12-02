@@ -15,4 +15,15 @@ Small snippets of code and tests for this blog post
 [README.md](04-dependency-injection-points/README.md) and all of them will
 expect a PostgreSQL database running.
 
-This project provides a compose file so you don't need to worry about it.
+This project provides a [compose file](00-database/docker-compose.yml) so you
+don't need to worry about it.
+
+To run the database:
+
+```bash
+docker compose -f 00-database/docker-compose.yml up 
+```
+
+## Further information
+
+See blog post.
