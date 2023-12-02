@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node index.mjs",
     "dev": "nodemon index.mjs",
-    "test": "ava"
+    "test": "cross-env NODE_ENV=test ava"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +17,12 @@
     "dotenv-flow": "^4.0.1",
     "knex": "^3.0.1",
     "koa": "^2.14.2",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "ava": "^5.3.1",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.0.2",
     "sinon": "^17.0.1",
     "supertest": "^6.3.3"
