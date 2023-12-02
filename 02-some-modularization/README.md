@@ -7,7 +7,7 @@
 ## Running
 
 ```bash
-npm run dev
+npm run start
 ```
 
 ## Testing
