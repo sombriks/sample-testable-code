@@ -1,6 +1,6 @@
 # [Is this code really testable?](https://github.com/sombriks/sample-testable-code)
 
-Small snippets of code and tests for this blog post
+Small snippets of code and tests for [this blog post](https://sombriks.com/blog/0060-testable-code/)
 
 ## Requirements
 
