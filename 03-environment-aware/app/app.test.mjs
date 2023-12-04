@@ -5,21 +5,26 @@ import { db } from './database.mjs'
 import { app } from './main.mjs'
 
 test.before(async t => {
-  await db.raw(`
-  create table books(
-    id integer not null primary key autoincrement,
-    title text not null,
-    author text not null
-  );
-  
-  insert into books (title, author) values ('American Gods', 'Neil Gaiman');
-  insert into books (title, author) values ('Sandman', 'Neil Gaiman');
-  insert into books (title, author) values ('Watchmen', 'Alan Moore');  
-  `)
+  const trx = await db.transaction()
+  await trx.schema.createTable('books', t => {
+    t.increments('id')
+    t.string('title').notNullable()
+    t.string('author').notNullable()
+  })
+  await trx.commit()
+
+  const trx2 = await db.transaction()
+  await trx2('books').insert([
+    { title: 'American Gods', author: 'Neil Gaiman' },
+    { title: 'Sandman', author: 'Neil Gaiman' },
+    { title: 'Watchmen', author: 'Alan Moore' }
+  ])
+  await trx2.commit()
 })
 
 test('should get books', async t => {
   const result = await request(app.callback())
     .get('/books').expect('Content-Type', /json/)
   t.is(200, result.status)
+  t.is(3, result.body.length)
 })

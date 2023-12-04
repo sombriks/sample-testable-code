@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "main": "index.mjs",
   "scripts": {
-    "start": "node index.mjs",
-    "dev": "nodemon index.mjs",
+    "start": "node -r dotenv-flow/config index.mjs",
+    "dev": "nodemon -r dotenv-flow/config index.mjs",
     "test": "cross-env NODE_ENV=test ava"
   },
   "keywords": [],
